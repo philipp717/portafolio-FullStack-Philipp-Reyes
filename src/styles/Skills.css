@@ -1,0 +1,305 @@
+.skills-container {
+  padding: 20px 0;
+}
+
+.category-selector {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.arcade-tabs {
+  display: flex;
+  justify-content: center;
+  border: 3px solid #00FFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tab-button {
+  background-color: transparent;
+  border: none;
+  border-right: 3px solid #00FFFF;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  flex: 1;
+}
+
+.tab-button:last-child {
+  border-right: none;
+}
+
+.tab-button.active {
+  background-color: #7B1FA2;
+  color: #00FFFF;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.tab-button:hover:not(.active) {
+  background-color: rgba(123, 31, 162, 0.5);
+}
+
+.skills-display {
+  margin-bottom: 30px;
+}
+
+.arcade-monitor {
+  background-color: #000;
+  border: 15px solid #4A148C;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(123, 31, 162, 0.8);
+  position: relative;
+}
+
+.arcade-monitor:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 255, 255, 0.05), rgba(0, 255, 255, 0.02));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.monitor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4A148C;
+  padding: 10px 15px;
+  border-bottom: 3px solid #00FFFF;
+}
+
+.monitor-title {
+  color: #FFFFFF;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+.monitor-controls {
+  display: flex;
+}
+
+.control-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  background-color: #FF00FF;
+  box-shadow: 0 0 5px #FF00FF;
+}
+
+.monitor-content {
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.skill-item {
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skill-item:nth-child(6) { animation-delay: 0.6s; }
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-icon {
+  background-color: #7B1FA2;
+  color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 2px solid #00FFFF;
+  box-shadow: 0 0 5px #00FFFF;
+}
+
+.skill-name {
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+
+.skill-bar-container {
+  position: relative;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00FFFF;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  width: 0;
+  transition: width 1s ease;
+  position: relative;
+}
+
+.skill-bar:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-percentage {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.skills-legend {
+  margin-top: 20px;
+}
+
+.legend-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 3px solid #7B1FA2;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(123, 31, 162, 0.7);
+}
+
+.legend-container h3 {
+  color: #00FFFF;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+.legend-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  margin-right: 5px;
+  border: 1px solid #FFFFFF;
+}
+
+.legend-item span {
+  color: #FFFFFF;
+  font-size: 0.7rem;
+}
+
+/* Scrollbar personalizado */
+.monitor-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.monitor-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.monitor-content::-webkit-scrollbar-thumb {
+  background: #7B1FA2;
+  border-radius: 5px;
+  border: 2px solid #00FFFF;
+}
+
+.monitor-content::-webkit-scrollbar-thumb:hover {
+  background: #9C27B0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 0.7rem;
+  }
+  
+  .monitor-title {
+    font-size: 0.9rem;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem;
+  }
+  
+  .legend-items {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .legend-item {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .arcade-tabs {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  
+  .tab-button {
+    border-right: none;
+    border-bottom: 3px solid #00FFFF;
+  }
+  
+  .tab-button:last-child {
+    border-bottom: none;
+  }
+  
+  .monitor-title {
+    font-size: 0.8rem;
+  }
+  
+  .skill-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+  
+  .skill-bar-container {
+    height: 15px;
+  }
+}

@@ -1,0 +1,91 @@
+.header {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.arcade-navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 3px solid #00FFFF;
+  padding: 15px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.logo-text {
+  font-family: 'Press Start 2P', cursive;
+  color: #00FFFF !important;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00FFFF;
+  animation: glitch 2s infinite alternate;
+  padding: 5px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.logo-text:hover {
+  border-color: #FF00FF;
+  text-shadow: 0 0 15px #FF00FF;
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+  margin: 0 5px;
+  padding: 8px 12px !important;
+  position: relative;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF00FF;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #FF00FF !important;
+  text-shadow: 0 0 8px #FF00FF;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #00FFFF !important;
+  text-shadow: 0 0 10px #00FFFF;
+  border-bottom: 2px solid #00FFFF;
+}
+
+.custom-toggler {
+  background-color: #7B1FA2 !important;
+  border: 2px solid #00FFFF !important;
+}
+
+.custom-toggler:focus {
+  box-shadow: 0 0 10px #FF00FF !important;
+}
+
+@media (max-width: 992px) {
+  .nav-link {
+    margin: 5px 0;
+    border-left: 2px solid #7B1FA2;
+  }
+  
+  .nav-link.active {
+    border-bottom: none;
+    border-left: 2px solid #00FFFF;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+}
