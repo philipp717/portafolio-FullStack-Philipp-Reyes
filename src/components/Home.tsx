@@ -4,7 +4,7 @@ import '../styles/Home.css';
 
 const Home: React.FC = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'DESARROLLADOR FULLSTACK';
+  const fullText = 'ESTUDIANTE DE INGENIERÍA EN INFORMÁTICA';
   const [index, setIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
 
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
               </h2>
             </div>
             <p className="intro-text">
-              ¡Bienvenido a mi portafolio estilo arcade! Explora mis proyectos y habilidades como si estuvieras en un viaje a través de un videojuego retro.
+              ¡Bienvenido a mi portafolio! Explora mis habilidades y capacidades como si estuvieras en un viaje a través de un videojuego retro.
             </p>
             <div className="button-container">
               <Button 
@@ -61,20 +61,6 @@ const Home: React.FC = () => {
               >
                 CONTACTO
               </Button>
-            </div>
-          </div>
-          
-          <div className="arcade-controls">
-            <div className="control-instructions">
-              <p>USE LAS TECLAS DE NAVEGACIÓN O EL MENÚ PARA EXPLORAR</p>
-              <div className="keys">
-                <div className="key key-up">▲</div>
-                <div className="key-row">
-                  <div className="key key-left">◄</div>
-                  <div className="key key-down">▼</div>
-                  <div className="key key-right">►</div>
-                </div>
-              </div>
             </div>
           </div>
         </Col>

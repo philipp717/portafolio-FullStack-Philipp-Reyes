@@ -14,31 +14,24 @@ const Footer: React.FC = () => {
           </Col>
           <Col md={6} className="footer-right">
             <div className="social-links">
-              <a 
-                href="https://github.com/your-github" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <div 
                 className="social-link"
                 data-testid="github-link"
               >
                 <i className="fab fa-github"></i>
-              </a>
-              <a 
-                href="https://linkedin.com/in/your-linkedin" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              </div>
+              <div 
                 className="social-link"
                 data-testid="linkedin-link"
               >
                 <i className="fab fa-linkedin"></i>
-              </a>
-              <a 
-                href="mailto:your-email@example.com" 
+              </div>
+              <div 
                 className="social-link"
                 data-testid="email-link"
               >
                 <i className="fas fa-envelope"></i>
-              </a>
+              </div>
             </div>
           </Col>
         </Row>

@@ -14,31 +14,29 @@ const Skills: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('frontend');
   const [animatedSkills, setAnimatedSkills] = useState<Skill[]>([]);
 
-  // Datos de ejemplo para habilidades
+  // Habilidades actuales
   const skills: Skill[] = [
     // Frontend
-    { id: 1, name: 'HTML5', icon: 'html5', level: 90, category: 'frontend' },
-    { id: 2, name: 'CSS3', icon: 'css3-alt', level: 85, category: 'frontend' },
-    { id: 3, name: 'JavaScript', icon: 'js', level: 88, category: 'frontend' },
-    { id: 4, name: 'React', icon: 'react', level: 85, category: 'frontend' },
-    { id: 5, name: 'Bootstrap', icon: 'bootstrap', level: 80, category: 'frontend' },
-    { id: 6, name: 'TypeScript', icon: 'typescript', level: 75, category: 'frontend' },
+    { id: 1, name: 'HTML5', icon: 'html5', level: 56, category: 'frontend' },
+    { id: 2, name: 'CSS3', icon: 'css3-alt', level: 40, category: 'frontend' },
+    { id: 3, name: 'JavaScript', icon: 'js', level: 54, category: 'frontend' },
+    { id: 4, name: 'React', icon: 'react', level: 43, category: 'frontend' },
     
     // Backend
-    { id: 7, name: 'Node.js', icon: 'node-js', level: 82, category: 'backend' },
-    { id: 8, name: 'Express', icon: 'node-js', level: 80, category: 'backend' },
-    { id: 9, name: 'MongoDB', icon: 'database', level: 75, category: 'backend' },
-    { id: 10, name: 'MySQL', icon: 'database', level: 78, category: 'backend' },
-    { id: 11, name: 'Firebase', icon: 'fire', level: 70, category: 'backend' },
-    { id: 12, name: 'RESTful API', icon: 'server', level: 85, category: 'backend' },
+    { id: 7, name: 'Python', icon: 'python', level: 78, category: 'backend' },
+    { id: 8, name: 'Java', icon: 'java', level: 65, category: 'backend' },
+    { id: 9, name: 'Node.js', icon: 'node-js', level: 45, category: 'backend' },
+    { id: 10, name: 'Spring Boot', icon: 'leaf', level: 36, category: 'backend' },
+    { id: 11, name: 'MySQL', icon: 'database', level: 68, category: 'backend' },
+    { id: 12, name: 'Hibernate', icon: 'database', level: 32, category: 'backend' },
+    { id: 13, name: 'Docker', icon: 'docker', level: 31, category: 'backend' },
     
     // Herramientas
-    { id: 13, name: 'Git', icon: 'git-alt', level: 88, category: 'tools' },
-    { id: 14, name: 'GitHub', icon: 'github', level: 85, category: 'tools' },
-    { id: 15, name: 'VS Code', icon: 'code', level: 90, category: 'tools' },
-    { id: 16, name: 'Webpack', icon: 'js', level: 70, category: 'tools' },
-    { id: 17, name: 'NPM', icon: 'npm', level: 85, category: 'tools' },
-    { id: 18, name: 'Jest', icon: 'vial', level: 75, category: 'tools' }
+    { id: 14, name: 'VS Code', icon: 'code', level: 86, category: 'tools' },
+    { id: 15, name: 'Git', icon: 'git-alt', level: 64, category: 'tools' },
+    { id: 16, name: 'GitHub', icon: 'github', level: 72, category: 'tools' },
+    { id: 17, name: 'Apache NetBeans', icon: 'java', level: 52, category: 'tools' },
+    { id: 18, name: 'SQL Developer', icon: 'database', level: 64, category: 'tools' }
   ];
 
   // Animación gradual de las barras de progreso
@@ -116,10 +114,8 @@ const Skills: React.FC = () => {
                   <div className="skill-bar-container">
                     <div 
                       className="skill-bar" 
-                      style={{ 
-                        width: `${skill.level}%`,
-                        backgroundColor: getColorByLevel(skill.level) 
-                      }}
+                      style={{ width: `${skill.level}%` }}
+                      data-level={getLevelName(skill.level)}
                     ></div>
                     <span className="skill-percentage">{skill.level}%</span>
                   </div>
@@ -140,11 +136,11 @@ const Skills: React.FC = () => {
                 <span>PRINCIPIANTE (0-25%)</span>
               </div>
               <div className="legend-item">
-                <div className="legend-color" style={{ backgroundColor: '#FFA500' }}></div>
+                <div className="legend-color" style={{ backgroundColor: '#FF6600' }}></div>
                 <span>INTERMEDIO (26-50%)</span>
               </div>
               <div className="legend-item">
-                <div className="legend-color" style={{ backgroundColor: '#FFFF00' }}></div>
+                <div className="legend-color" style={{ backgroundColor: '#FFD700' }}></div>
                 <span>AVANZADO (51-75%)</span>
               </div>
               <div className="legend-item">
@@ -159,12 +155,12 @@ const Skills: React.FC = () => {
   );
 };
 
-// Función para determinar el color según el nivel
-const getColorByLevel = (level: number): string => {
-  if (level < 25) return '#FF0000'; // Rojo
-  if (level < 50) return '#FFA500'; // Naranja
-  if (level < 75) return '#FFFF00'; // Amarillo
-  return '#00FF00'; // Verde
+// Función para determinar el nivel según el porcentaje
+const getLevelName = (level: number): string => {
+  if (level < 25) return 'principiante';
+  if (level < 50) return 'intermedio';
+  if (level < 75) return 'avanzado';
+  return 'experto';
 };
 
 export default Skills;
