@@ -1,0 +1,83 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Estilos globales */
+a {
+  color: #00FF66;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #FF00FF;
+  text-decoration: none;
+}
+
+.btn-arcade {
+  background-color: #FF00FF;
+  border: 3px solid #00FFFF;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00FFFF;
+  margin: 10px;
+}
+
+.btn-arcade:hover {
+  background-color: #00FFFF;
+  border-color: #FF00FF;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #FF00FF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 5px #00FFFF,
+    0 0 10px #00FFFF,
+    0 0 15px #00FFFF;
+}
+
+/* Animaciones */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #FF00FF, -0.05em -0.025em 0 #00FFFF;
+  }
+  25% {
+    text-shadow: -0.05em -0.025em 0 #FF00FF, 0.025em 0.025em 0 #00FFFF;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #FF00FF, -0.05em -0.05em 0 #00FFFF;
+  }
+  75% {
+    text-shadow: -0.05em -0.05em 0 #FF00FF, -0.025em 0.05em 0 #00FFFF;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #FF00FF, 0.05em -0.025em 0 #00FFFF;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

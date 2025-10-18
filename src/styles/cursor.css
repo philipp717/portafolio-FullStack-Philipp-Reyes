@@ -1,0 +1,8 @@
+.cursor-pointer {
+  cursor: url('../assets/img/cursor-pointer.png'), auto;
+}
+
+/* Añadir esta clase a los elementos que deberían tener el cursor personalizado */
+.project-card, .arcade-button, .nav-link, .social-icon, .btn {
+  cursor: url('../assets/img/cursor-pointer.png'), pointer !important;
+}

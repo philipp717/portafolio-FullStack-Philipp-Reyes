@@ -1,0 +1,139 @@
+/* Estilos del contenedor principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #000 0px,
+    #000 1px,
+    #1c0a29 2px,
+    #1c0a29 3px
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.app-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(123, 31, 162, 0) 0%, rgba(123, 31, 162, 0.8) 100%);
+  /* No background image for now */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Estilo de pantalla arcade */
+.arcade-screen {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 80vh;
+  background-color: #7B1FA2;
+  border: 15px solid #4A148C;
+  border-radius: 20px;
+  box-shadow: 
+    0 0 0 5px #000,
+    0 0 20px #FF00FF,
+    0 0 40px rgba(255, 0, 255, 0.5);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.screen-content {
+  position: relative;
+  min-height: 100%;
+  padding: 20px;
+  background: 
+    linear-gradient(rgba(123, 31, 162, 0.8), rgba(123, 31, 162, 0.8)),
+    url('../assets/img/grid-bg.png');
+  background-size: cover;
+  overflow: hidden;
+}
+
+.screen-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 0.2%,
+    transparent 0.4%
+  );
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+.screen-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(123, 31, 162, 0) 0%, rgba(123, 31, 162, 0.5) 100%);
+  pointer-events: none;
+}
+
+/* Contenido principal */
+.content {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 60vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 4px solid #9C27B0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  position: relative;
+  z-index: 3;
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 768px) {
+  .arcade-screen {
+    border-width: 10px;
+  }
+  
+  .content {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .arcade-screen {
+    border-width: 8px;
+  }
+  
+  .content {
+    padding: 8px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+}
