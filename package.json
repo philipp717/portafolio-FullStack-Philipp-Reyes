@@ -11,7 +11,7 @@
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -19,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "react-scripts test --coverage"
+    "test:coverage": "react-scripts test --coverage",
+    "test:karma": "karma start",
+    "test:all": "npm run test && npm run test:karma"
   },
   "eslintConfig": {
     "extends": [
@@ -40,15 +42,23 @@
     ]
   },
   "devDependencies": {
+    "@types/helmet": "^0.0.48",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.50",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@types/testing-library__jest-dom": "^5.14.9",
+    "helmet": "^8.1.0",
     "jasmine-core": "^5.1.0",
     "karma": "^6.4.2",
     "karma-chrome-launcher": "^3.2.0",
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
-    "typescript": "^4.9.5"
+    "npm-force-resolutions": "^0.0.10",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.31",
+    "typescript": "^4.9.5",
+    "webpack-dev-server": "^5.2.2",
+    "xss-clean": "^0.1.4"
   }
 }

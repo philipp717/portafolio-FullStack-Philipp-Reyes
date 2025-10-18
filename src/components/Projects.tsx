@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import '../styles/Projects.css';
 import milSaboresImg from '../assets/img/Captura de pantalla 2025-10-18 143139.png';
+import taskManagerImg from '../assets/img/Captura de pantalla 2025-10-18 175341.png';
+import tiendaEsotericaImg from '../assets/img/Captura de pantalla 2025-10-18 183221.png';
 
 interface Project {
   id: number;
@@ -28,27 +30,19 @@ const Projects: React.FC = () => {
     },
     {
       id: 2,
-      title: 'TASK MANAGER',
-      description: 'Aplicación de gestión de tareas con funcionalidades como arrastrar y soltar, categorización por colores, establecer prioridades y recordatorios.',
-      technologies: ['React', 'Redux', 'Firebase', 'SCSS'],
-      image: '/assets/projects/taskmanager.jpg',
-      codeUrl: 'https://github.com/your-github/taskmanager'
+      title: 'BLOG DEPORTIVO',
+      description: 'Plataforma de blog dedicada a rutinas de deporte con sistema de agregar a favoritos y búsqueda avanzada.',
+      technologies: ['HTML', 'JavaScript', 'CSS'],
+      image: taskManagerImg,
+      codeUrl: 'https://github.com/philipp717/BLOCK-PERSONAL-RUTINADEPORTE'
     },
     {
       id: 3,
-      title: 'WEATHER APP',
-      description: 'Aplicación del clima que muestra pronósticos en tiempo real utilizando geolocalización y APIs externas. Incluye gráficos interactivos y múltiples vistas.',
-      technologies: ['React', 'API REST', 'Chart.js', 'CSS3'],
-      image: '/assets/projects/weather.jpg',
-      codeUrl: 'https://github.com/your-github/weatherapp'
-    },
-    {
-      id: 4,
-      title: 'BLOG PERSONAL',
-      description: 'Plataforma de blog con sistema de gestión de contenidos, comentarios, categorías y búsqueda avanzada.',
-      technologies: ['React', 'Node.js', 'MySQL', 'Bootstrap'],
-      image: '/assets/projects/blog.jpg',
-      codeUrl: 'https://github.com/your-github/blog'
+      title: 'TIENDA ESOTÉRICA',
+      description: 'Tienda en línea especializada en productos esotéricos, con catálogo de productos, carrito de compras y sistema de pago seguro.',
+      technologies: ['HTML', 'JavaScript', 'CSS'],
+      image: tiendaEsotericaImg,
+      codeUrl: 'https://github.com/philipp717/tienda_esoterica'
     }
   ];
 
@@ -84,7 +78,16 @@ const Projects: React.FC = () => {
             >
               <div className="project-image">
                 <div className="image-container">
-                  <img src={project.image} alt={project.title} className="project-img" />
+                  <img 
+                    src={project.image} 
+                    alt={`Captura de pantalla del proyecto ${project.title}`} 
+                    className="project-img"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = '/assets/img/fallback-project.png';
+                    }}
+                  />
                   <div className="project-title">{project.title}</div>
                 </div>
               </div>
@@ -108,7 +111,7 @@ const Projects: React.FC = () => {
       </Row>
       
       {/* Detalles del proyecto seleccionado */}
-      <div className={`project-details-modal ${isDetailsVisible ? 'visible' : ''}`}>
+      <div className={`project-details-modal ${isDetailsVisible ? 'visible' : ''}`} role="dialog">
         {selectedProject && (
           <div className="modal-content">
             <div className="modal-header">
@@ -117,6 +120,7 @@ const Projects: React.FC = () => {
                 className="close-button" 
                 onClick={handleCloseDetails}
                 data-testid="close-details-button"
+                aria-label="Cerrar detalles del proyecto"
               >
                 X
               </button>
@@ -141,6 +145,14 @@ const Projects: React.FC = () => {
                   rel="noopener noreferrer" 
                   className="btn-arcade"
                   data-testid="code-link"
+                  aria-label={`Ver código del proyecto ${selectedProject.title} en GitHub`}
+                  onClick={(e) => {
+                    // Validar que el enlace sea seguro
+                    if (!selectedProject.codeUrl.startsWith('https://github.com')) {
+                      e.preventDefault();
+                      console.error('Enlace no seguro detectado');
+                    }
+                  }}
                 >
                   CÓDIGO
                 </a>

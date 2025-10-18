@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Projects from '../components/Projects';
 import userEvent from '@testing-library/user-event';
@@ -22,15 +22,13 @@ describe('Projects Component', () => {
   it('should render all project cards', () => {
     renderProjects();
     
-    const ecommerceProject = screen.getByText('E-COMMERCE APP');
-    const taskManagerProject = screen.getByText('TASK MANAGER');
-    const weatherProject = screen.getByText('WEATHER APP');
-    const blogProject = screen.getByText('BLOG PERSONAL');
+    const pasteleriaProject = screen.getByText('PASTELERÍA MIL SABORES');
+    const blogDeportivoProject = screen.getByText('BLOG DEPORTIVO');
+    const tiendaEsotericaProject = screen.getByText('TIENDA ESOTÉRICA');
     
-    expect(ecommerceProject).toBeInTheDocument();
-    expect(taskManagerProject).toBeInTheDocument();
-    expect(weatherProject).toBeInTheDocument();
-    expect(blogProject).toBeInTheDocument();
+    expect(pasteleriaProject).toBeInTheDocument();
+    expect(blogDeportivoProject).toBeInTheDocument();
+    expect(tiendaEsotericaProject).toBeInTheDocument();
   });
 
   it('should show project details when a project is clicked', async () => {
@@ -49,13 +47,13 @@ describe('Projects Component', () => {
     renderProjects();
     
     // Check if technology tags are displayed
-    const reactTag = screen.getAllByText('React')[0];
-    const nodeTag = screen.getByText('Node.js');
-    const bootstrapTag = screen.getByText('Bootstrap');
+    const htmlTag = screen.getAllByText('HTML')[0];
+    const jsTag = screen.getAllByText('JavaScript')[0];
+    const cssTag = screen.getAllByText('CSS')[0];
     
-    expect(reactTag).toBeInTheDocument();
-    expect(nodeTag).toBeInTheDocument();
-    expect(bootstrapTag).toBeInTheDocument();
+    expect(htmlTag).toBeInTheDocument();
+    expect(jsTag).toBeInTheDocument();
+    expect(cssTag).toBeInTheDocument();
   });
 
   it('should close project details when close button is clicked', async () => {
@@ -69,28 +67,23 @@ describe('Projects Component', () => {
     const closeButton = await screen.findByTestId('close-details-button');
     userEvent.click(closeButton);
     
-    // Check if the modal is not visible (should be closed)
-    // This needs a bit of time for the animation to complete
-    setTimeout(() => {
-      const modalContent = screen.queryByText(/tienda virtual con carrito de compras/i);
-      expect(modalContent).not.toBeInTheDocument();
-    }, 500);
+    // Use waitForElementToBeRemoved to properly handle the animation timing
+    await waitForElementToBeRemoved(() =>
+      screen.queryByText(/tienda virtual con carrito de compras/i)
+    );
   });
 
-  it('should contain links to demo and code in project details', async () => {
+  it('should contain a link to code in project details', async () => {
     renderProjects();
     
     // Open a project's details
     const projectCard = screen.getByTestId('project-1');
     userEvent.click(projectCard);
     
-    // Check for demo and code links
-    const demoLink = await screen.findByTestId('demo-link');
+    // Check for code link
     const codeLink = await screen.findByTestId('code-link');
     
-    expect(demoLink).toBeInTheDocument();
     expect(codeLink).toBeInTheDocument();
-    expect(demoLink).toHaveAttribute('href', expect.stringContaining('example.com/demo'));
     expect(codeLink).toHaveAttribute('href', expect.stringContaining('github.com'));
   });
 });

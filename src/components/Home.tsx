@@ -18,6 +18,7 @@ const Home: React.FC = () => {
       
       return () => clearTimeout(timeout);
     }
+    return undefined; // Retorno explícito para todas las rutas
   }, [index, fullText]);
 
   // Efecto para el cursor parpadeante
