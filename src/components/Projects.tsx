@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import '../styles/Projects.css';
+import milSaboresImg from '../assets/img/Captura de pantalla 2025-10-18 143139.png';
 
 interface Project {
   id: number;
@@ -8,7 +9,6 @@ interface Project {
   description: string;
   technologies: string[];
   image: string;
-  demoUrl: string;
   codeUrl: string;
 }
 
@@ -20,12 +20,11 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-COMMERCE APP',
-      description: 'Tienda virtual con carrito de compras, gestión de usuarios y pasarela de pagos. Implementa autenticación JWT, filtrado de productos y diseño responsivo.',
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Bootstrap'],
-      image: '/assets/projects/ecommerce.jpg',
-      demoUrl: 'https://example.com/demo1',
-      codeUrl: 'https://github.com/your-github/ecommerce'
+      title: 'PASTELERÍA MIL SABORES',
+      description: 'Tienda virtual con carrito de compras, gestión de usuarios y pasarela de pagos. Implementa inicio de sesión y registro, filtrado de productos y diseño responsivo.',
+      technologies: ['HTML', 'JavaScript', 'CSS'],
+      image: milSaboresImg,
+      codeUrl: 'https://github.com/philipp717/Prueba1'
     },
     {
       id: 2,
@@ -33,7 +32,6 @@ const Projects: React.FC = () => {
       description: 'Aplicación de gestión de tareas con funcionalidades como arrastrar y soltar, categorización por colores, establecer prioridades y recordatorios.',
       technologies: ['React', 'Redux', 'Firebase', 'SCSS'],
       image: '/assets/projects/taskmanager.jpg',
-      demoUrl: 'https://example.com/demo2',
       codeUrl: 'https://github.com/your-github/taskmanager'
     },
     {
@@ -42,7 +40,6 @@ const Projects: React.FC = () => {
       description: 'Aplicación del clima que muestra pronósticos en tiempo real utilizando geolocalización y APIs externas. Incluye gráficos interactivos y múltiples vistas.',
       technologies: ['React', 'API REST', 'Chart.js', 'CSS3'],
       image: '/assets/projects/weather.jpg',
-      demoUrl: 'https://example.com/demo3',
       codeUrl: 'https://github.com/your-github/weatherapp'
     },
     {
@@ -51,7 +48,6 @@ const Projects: React.FC = () => {
       description: 'Plataforma de blog con sistema de gestión de contenidos, comentarios, categorías y búsqueda avanzada.',
       technologies: ['React', 'Node.js', 'MySQL', 'Bootstrap'],
       image: '/assets/projects/blog.jpg',
-      demoUrl: 'https://example.com/demo4',
       codeUrl: 'https://github.com/your-github/blog'
     }
   ];
@@ -87,8 +83,8 @@ const Projects: React.FC = () => {
               data-testid={`project-${project.id}`}
             >
               <div className="project-image">
-                <div className="image-placeholder" style={{ backgroundColor: '#4A148C' }}>
-                  {/* Aquí se cargará la imagen del proyecto */}
+                <div className="image-container">
+                  <img src={project.image} alt={project.title} className="project-img" />
                   <div className="project-title">{project.title}</div>
                 </div>
               </div>
@@ -127,7 +123,7 @@ const Projects: React.FC = () => {
             </div>
             <div className="modal-body">
               <div className="project-detail-image">
-                <div className="image-placeholder" style={{ backgroundColor: '#4A148C' }}></div>
+                <img src={selectedProject.image} alt={selectedProject.title} className="detail-img" />
               </div>
               <p className="project-description">{selectedProject.description}</p>
               <div className="tech-stack">
@@ -139,15 +135,6 @@ const Projects: React.FC = () => {
                 </div>
               </div>
               <div className="project-links">
-                <a 
-                  href={selectedProject.demoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn-arcade"
-                  data-testid="demo-link"
-                >
-                  DEMO
-                </a>
                 <a 
                   href={selectedProject.codeUrl} 
                   target="_blank" 
