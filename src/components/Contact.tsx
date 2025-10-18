@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="method-details">
                   <h4>EMAIL</h4>
-                  <p>philipp.reyes@example.com</p>
+                  <p>ph.reyes@duoucuc.cl</p>
                 </div>
               </div>
               
@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="method-details">
                   <h4>UBICACIÓN</h4>
-                  <p>Ciudad, País</p>
+                  <p>Santiago, Chile</p>
                 </div>
               </div>
               
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="method-details">
                   <h4>LINKEDIN</h4>
-                  <p>linkedin.com/in/your-linkedin</p>
+                  <p>https://www.linkedin.com/in/philipp-reyes-ahumada-7b4859308/</p>
                 </div>
               </div>
             </div>
