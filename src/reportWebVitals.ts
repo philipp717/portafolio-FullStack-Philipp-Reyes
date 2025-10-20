@@ -1,12 +1,8 @@
 const reportWebVitals = (onPerfEntry?: any) => {
+  // Web Vitals tracking disabled for now
+  // You can re-enable by installing web-vitals: npm install web-vitals
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
+    console.log('Web Vitals tracking is available but disabled');
   }
 };
 
