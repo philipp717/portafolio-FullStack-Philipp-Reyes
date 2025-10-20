@@ -1,94 +1,192 @@
 # Portafolio Full Stack - Philipp Reyes
 
-Este proyecto es un portafolio personal con estilo arcade desarrollado con React, TypeScript y Bootstrap.
+Un portafolio personal moderno con estilo arcade, desarrollado con React, TypeScript y Bootstrap. Este proyecto utiliza tecnologías de vanguardia para ofrecer una experiencia visual única y un rendimiento óptimo.
 
-## Características
+[![Security: 0 Vulnerabilities](https://img.shields.io/badge/security-0%20vulnerabilities-brightgreen.svg)](https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes)
+[![Build: Vite](https://img.shields.io/badge/build-vite-646CFF.svg?logo=vite)](https://vitejs.dev/)
+[![Framework: React](https://img.shields.io/badge/framework-react-61DAFB.svg?logo=react)](https://reactjs.org/)
+[![Language: TypeScript](https://img.shields.io/badge/language-typescript-3178C6.svg?logo=typescript)](https://www.typescriptlang.org/)
 
-- Diseño responsive con Bootstrap
-- Estilo visual arcade con colores vibrantes y efectos pixelados
-- Componentes React con TypeScript
-- Secciones completas: Home, About, Projects, Skills y Contact
-- Tests unitarios con Jasmine y Karma
+## ✨ Features
 
-## Tecnologías utilizadas
+- 🚀 **Server-side rendering** con Hot Module Replacement (HMR)
+- ⚡️ **Vite** para desarrollo ultra-rápido y builds optimizados
+- 📦 **Asset bundling** y optimización automática
+- 🔄 **React Router** para navegación fluida
+- 🔒 **TypeScript** por defecto para mayor seguridad de tipos
+- 🎨 **Bootstrap 5** + CSS personalizado para tema arcade
+- 🧪 **Vitest** para testing moderno y rápido
+- 🛡️ **0 vulnerabilidades** de seguridad
+- 📱 **Diseño responsive** que funciona en todos los dispositivos
+- 🎮 **Efectos visuales arcade** con colores vibrantes y animaciones
 
-- React 18
-- TypeScript
-- Bootstrap 5
-- React Router
-- CSS personalizado para el tema arcade
+## 🚀 Getting Started
 
-## Guía de Inicio Rápido 🚀
+### 📋 Prerequisites
 
-¡Hola! Si quieres ejecutar mi portafolio en tu computadora, aquí te explico paso a paso cómo hacerlo:
+Asegúrate de tener instalado:
+- [Node.js](https://nodejs.org/) (versión 16 o superior)
+- npm (incluido con Node.js)
+- Un navegador web moderno
 
-### Prerequisitos 📋
+### 🔧 Installation
 
-Antes de empezar, asegúrate de tener instalado:
-- [Node.js](https://nodejs.org/) (versión 14 o superior)
-- [Git](https://git-scm.com/) para clonar el repositorio
-- Un navegador web moderno (Chrome, Firefox, Edge)
+Instala las dependencias:
 
-### Pasos para Iniciar el Proyecto 🛠️
+```bash
+npm install
+```
 
-1. **Clona el Repositorio**
-   ```bash
-   git clone https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes.git
-   ```
-   Este comando creará una copia de mi portafolio en tu computadora.
+### 💻 Development
 
-2. **Ingresa a la Carpeta del Proyecto**
-   ```bash
-   cd portafolio-FullStack-Philipp-Reyes
-   ```
-   Este comando te llevará a la carpeta donde se encuentra el código.
+Inicia el servidor de desarrollo con HMR:
 
-3. **Cambia a la Rama Principal**
-   ```bash
-   git checkout PhilippReyes
-   ```
-   Esta es la rama donde está la última versión estable del proyecto.
+```bash
+npm run dev
+```
 
-4. **Instala las Dependencias**
-   ```bash
-   npm install
-   ```
-   Este proceso puede tomar unos minutos. Es normal ver algunos mensajes de advertencia.
+Tu aplicación estará disponible en `http://localhost:3000`.
 
-5. **Inicia el Proyecto**
-   ```bash
-   npm start
-   ```
-   ¡Y listo! El proyecto se abrirá automáticamente en tu navegador predeterminado.
+## 🏗️ Building for Production
 
-### ¿Qué Esperar? 🎮
+Crea un build optimizado para producción:
 
-- El proyecto se abrirá en `http://localhost:3000`
-- Verás una interfaz estilo arcade con efectos visuales
-- Puedes navegar entre las diferentes secciones usando el menú
-- Si encuentras algún problema, asegúrate de que los puertos 3000 no estén en uso
+```bash
+npm run build
+```
 
-### Solución de Problemas Comunes 🔧
+El build generará los archivos optimizados en la carpeta `dist/`.
 
-- Si ves errores de dependencias, prueba ejecutando `npm install` nuevamente
-- Si el puerto 3000 está ocupado, el proyecto te preguntará si quieres usar otro puerto
-- Para detener el servidor, presiona `Ctrl + C` en la terminal
+### Vista previa del build de producción:
 
-### ¿Necesitas Ayuda? 💡
+```bash
+npm run preview
+```
 
-Si tienes algún problema o pregunta:
-1. Revisa que todos los prerequisitos estén instalados correctamente
-2. Asegúrate de estar en la rama correcta (PhilippReyes)
-3. Intenta eliminar la carpeta `node_modules` y ejecutar `npm install` nuevamente
-4. [Abre un issue](https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes/issues) si el problema persiste
+## 🧪 Testing
 
-## Estructura del proyecto
+Ejecuta los tests:
 
-- `src/components/`: Componentes React
-- `src/styles/`: Archivos CSS
-- `src/assets/img/`: Imágenes y recursos visuales
-- `src/tests/`: Pruebas unitarias
+```bash
+npm run test
+```
 
-## Autor
+Para ver el coverage de tests:
 
-- **Philipp Reyes**
+```bash
+npm run test:coverage
+```
+
+## 📁 Project Structure
+
+```
+├── src/
+│   ├── components/      # Componentes React reutilizables
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── Home.tsx
+│   │   ├── Projects.tsx
+│   │   └── Skills.tsx
+│   ├── styles/          # Archivos CSS modulares
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   ├── cursor.css
+│   │   └── ...
+│   ├── assets/          # Imágenes y recursos estáticos
+│   │   └── img/
+│   ├── tests/           # Pruebas unitarias
+│   ├── App.tsx          # Componente principal
+│   └── index.tsx        # Punto de entrada
+├── public/              # Archivos públicos estáticos
+├── index.html           # Template HTML
+├── vite.config.ts       # Configuración de Vite
+├── tsconfig.json        # Configuración de TypeScript
+└── package.json         # Dependencias y scripts
+```
+
+## 🛠️ Tech Stack
+
+### Core
+- **React 18** - Librería de UI
+- **TypeScript** - Tipado estático
+- **Vite** - Build tool y dev server
+- **React Router** - Navegación SPA
+
+### Styling
+- **Bootstrap 5** - Framework CSS
+- **React Bootstrap** - Componentes de Bootstrap para React
+- **CSS3** - Estilos personalizados
+
+### Testing
+- **Vitest** - Framework de testing moderno
+- **@testing-library/react** - Testing utilities
+
+### Development
+- **ESLint** - Linter para código limpio
+- **TypeScript ESLint** - Reglas específicas para TS
+
+## 📜 Available Scripts
+
+| Script | Descripción |
+|--------|-------------|
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Crea build de producción optimizado |
+| `npm run preview` | Previsualiza el build de producción |
+| `npm run test` | Ejecuta los tests con Vitest |
+| `npm run test:coverage` | Genera reporte de cobertura de tests |
+| `npm run lint` | Verifica el código con ESLint |
+
+## 🔒 Security
+
+Este proyecto mantiene **0 vulnerabilidades de seguridad**. Todas las dependencias se mantienen actualizadas regularmente.
+
+Para verificar el estado de seguridad:
+
+```bash
+npm audit
+```
+
+## 🌐 Deployment
+
+Este proyecto puede desplegarse en cualquier plataforma que soporte aplicaciones Node.js, incluyendo:
+
+- **Vercel** (Recomendado)
+- **Netlify**
+- **GitHub Pages**
+- **AWS S3 + CloudFront**
+- **Azure Static Web Apps**
+- **Google Cloud Platform**
+
+### Deploy en Vercel
+
+```bash
+npm install -g vercel
+vercel
+```
+
+## 🤝 Contributing
+
+Las contribuciones son bienvenidas. Para cambios importantes:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 License
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 👤 Author
+
+**Philipp Reyes**
+
+- GitHub: [@philipp717](https://github.com/philipp717)
+- Proyecto: [portafolio-FullStack-Philipp-Reyes](https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes)
+
+---
+
+Construido con ❤️ usando React, TypeScript y Vite
