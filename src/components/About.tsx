@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../styles/About.css';
+import profileImage from '../assets/img/0992261F-C452-49E7-8DD4-9D507F9DBC67.jpeg';
 
 const About: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const About: React.FC = () => {
           <div className="pixel-frame">
             <div className="profile-image-container">
               <div className="profile-image">
-                <img src={require('../assets/img/0992261F-C452-49E7-8DD4-9D507F9DBC67.jpeg')} alt="Philipp Reyes" className="img-fluid" data-testid="profile-image" />
+                <img src={profileImage} alt="Philipp Reyes" className="img-fluid" data-testid="profile-image" />
               </div>
             </div>
           </div>

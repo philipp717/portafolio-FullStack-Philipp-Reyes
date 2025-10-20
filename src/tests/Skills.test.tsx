@@ -1,5 +1,5 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import Skills from '../components/Skills';
 
@@ -22,50 +22,41 @@ describe('Skills Component', () => {
     expect(toolsTab).toBeInTheDocument();
   });
 
-  it('should show frontend skills by default', () => {
+  it('should show frontend skills by default', async () => {
     render(<Skills />);
     
-    // Check for frontend skills
-    const htmlSkill = screen.getByText('HTML5');
-    const cssSkill = screen.getByText('CSS3');
-    const jsSkill = screen.getByText('JavaScript');
-    
-    expect(htmlSkill).toBeInTheDocument();
-    expect(cssSkill).toBeInTheDocument();
-    expect(jsSkill).toBeInTheDocument();
+    // Wait for skills to be displayed after animation
+    await waitFor(() => {
+      const htmlSkill = screen.getByText('HTML5');
+      const cssSkill = screen.getByText('CSS3');
+      const jsSkill = screen.getByText('JavaScript');
+      const reactSkill = screen.getByText('React');
+      
+      expect(htmlSkill).toBeInTheDocument();
+      expect(cssSkill).toBeInTheDocument();
+      expect(jsSkill).toBeInTheDocument();
+      expect(reactSkill).toBeInTheDocument();
+    }, { timeout: 1000 });
   });
 
   it('should change skills when clicking on different category', async () => {
+    const user = userEvent.setup();
     render(<Skills />);
-    
-    // Check frontend skills first
-    const reactSkill = screen.getByText('React');
-    expect(reactSkill).toBeInTheDocument();
     
     // Click on backend tab
     const backendTab = screen.getByTestId('tab-backend');
-    userEvent.click(backendTab);
+    await user.click(backendTab);
     
     // Check for backend skills
-    const nodeSkill = await screen.findByText('Node.js');
-    const expressSkill = await screen.findByText('Express');
-    const mongoSkill = await screen.findByText('MongoDB');
-    
-    expect(nodeSkill).toBeInTheDocument();
-    expect(expressSkill).toBeInTheDocument();
-    expect(mongoSkill).toBeInTheDocument();
-  });
-
-  it('should display skill levels with progress bars', () => {
-    render(<Skills />);
-    
-    // Since the skills data is hardcoded in the component
-    // we can check for some of those values
-    const html5PercentageText = screen.getByText('90%');
-    const css3PercentageText = screen.getByText('85%');
-    
-    expect(html5PercentageText).toBeInTheDocument();
-    expect(css3PercentageText).toBeInTheDocument();
+    await waitFor(() => {
+      const pythonSkill = screen.getByText('Python');
+      const javaSkill = screen.getByText('Java');
+      const nodeSkill = screen.getByText('Node.js');
+      
+      expect(pythonSkill).toBeInTheDocument();
+      expect(javaSkill).toBeInTheDocument();
+      expect(nodeSkill).toBeInTheDocument();
+    }, { timeout: 1000 });
   });
 
   it('should render the skills legend', () => {

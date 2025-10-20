@@ -6,6 +6,30 @@ Un portafolio personal moderno con estilo arcade, desarrollado con React, TypeSc
 [![Build: Vite](https://img.shields.io/badge/build-vite-646CFF.svg?logo=vite)](https://vitejs.dev/)
 [![Framework: React](https://img.shields.io/badge/framework-react-61DAFB.svg?logo=react)](https://reactjs.org/)
 [![Language: TypeScript](https://img.shields.io/badge/language-typescript-3178C6.svg?logo=typescript)](https://www.typescriptlang.org/)
+[![Tests: 36/36](https://img.shields.io/badge/tests-36%2F36%20passing-brightgreen.svg)](https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes)
+
+## 🎯 Inicio Rápido (Quick Start)
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes.git
+
+# 2. Entrar al directorio
+cd portafolio-FullStack-Philipp-Reyes
+
+# 3. Instalar dependencias (0 vulnerabilidades ✅)
+npm install
+
+# 4. Iniciar servidor de desarrollo
+npm run dev
+
+# 5. Abrir http://localhost:3000 en tu navegador 🚀
+```
+
+**Para ejecutar los tests:**
+```bash
+npm test
+```
 
 ## ✨ Features
 
@@ -20,62 +44,126 @@ Un portafolio personal moderno con estilo arcade, desarrollado con React, TypeSc
 - 📱 **Diseño responsive** que funciona en todos los dispositivos
 - 🎮 **Efectos visuales arcade** con colores vibrantes y animaciones
 
-## 🚀 Getting Started
+## 🚀 Inicio Rápido
 
-### 📋 Prerequisites
+### 📋 Prerequisitos
 
 Asegúrate de tener instalado:
 - [Node.js](https://nodejs.org/) (versión 16 o superior)
 - npm (incluido con Node.js)
+- Git (para clonar el repositorio)
 - Un navegador web moderno
 
-### 🔧 Installation
+### 🔧 Instalación Paso a Paso
 
-Instala las dependencias:
+#### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/philipp717/portafolio-FullStack-Philipp-Reyes.git
+cd portafolio-FullStack-Philipp-Reyes
+```
+
+#### 2. Instalar dependencias
 
 ```bash
 npm install
 ```
 
-### 💻 Development
+Este comando instalará todas las dependencias necesarias con **0 vulnerabilidades**.
 
-Inicia el servidor de desarrollo con HMR:
+#### 3. Verificar la seguridad (Opcional)
+
+```bash
+npm audit
+```
+
+Deberías ver: **found 0 vulnerabilities** ✅
+
+### 💻 Iniciar el Proyecto
+
+#### Modo Desarrollo
+
+Inicia el servidor de desarrollo con Hot Module Replacement:
 
 ```bash
 npm run dev
 ```
 
-Tu aplicación estará disponible en `http://localhost:3000`.
+El proyecto se iniciará en `http://localhost:3000/` y se abrirá automáticamente en tu navegador.
 
-## 🏗️ Building for Production
+**Características del modo desarrollo:**
+- 🔥 Hot Module Replacement (HMR) - Los cambios se reflejan instantáneamente
+- ⚡ Compilación ultra-rápida con Vite
+- 🐛 Source maps para debugging
+- 🔄 Auto-refresh del navegador
 
-Crea un build optimizado para producción:
+## 🧪 Testing del Proyecto
+
+### Ejecutar Todos los Tests
+
+```bash
+npm test
+```
+
+Este comando ejecutará todos los tests en modo watch (se re-ejecutan al guardar cambios).
+
+### Ejecutar Tests Una Sola Vez
+
+```bash
+npm test -- --run
+```
+
+### Ver Cobertura de Tests
+
+```bash
+npm run test:coverage
+```
+
+Esto generará un reporte de cobertura mostrando qué porcentaje del código está cubierto por tests.
+
+### Resultados Esperados
+
+```
+✓ Test Files  9 passed (9)
+✓ Tests  36 passed (36)
+✓ found 0 vulnerabilities
+```
+
+**Tests incluidos:**
+- ✅ Componente Home (5 tests)
+- ✅ Componente Header (4 tests)
+- ✅ Componente Footer (4 tests)
+- ✅ Componente About (5 tests)
+- ✅ Componente Contact (2 tests)
+- ✅ Componente Projects (4 tests)
+- ✅ Componente Skills (5 tests)
+- ✅ Tests de seguridad (3 tests)
+- ✅ Tests de integración (4 tests)
+
+## 🏗️ Build de Producción
+
+### Crear Build Optimizado
 
 ```bash
 npm run build
 ```
 
-El build generará los archivos optimizados en la carpeta `dist/`.
+Este comando:
+- 🗜️ Minifica JavaScript y CSS
+- 📦 Optimiza imágenes y assets
+- 🌳 Realiza tree-shaking para eliminar código no usado
+- 🔄 Genera hashes para cache busting
+- ✅ Verifica TypeScript sin errores
 
-### Vista previa del build de producción:
+Los archivos optimizados se generarán en la carpeta `build/`.
+
+### Previsualizar el Build
 
 ```bash
 npm run preview
 ```
 
-## 🧪 Testing
-
-Ejecuta los tests:
-
-```bash
-npm run test
-```
-
-Para ver el coverage de tests:
-
-```bash
-npm run test:coverage
-```
+Esto iniciará un servidor local para previsualizar el build de producción en `http://localhost:4173/`.
 
 ## 📁 Project Structure
 
@@ -127,16 +215,83 @@ npm run test:coverage
 - **ESLint** - Linter para código limpio
 - **TypeScript ESLint** - Reglas específicas para TS
 
-## 📜 Available Scripts
+## 📜 Scripts Disponibles
 
-| Script | Descripción |
-|--------|-------------|
-| `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run build` | Crea build de producción optimizado |
-| `npm run preview` | Previsualiza el build de producción |
-| `npm run test` | Ejecuta los tests con Vitest |
-| `npm run test:coverage` | Genera reporte de cobertura de tests |
-| `npm run lint` | Verifica el código con ESLint |
+| Script | Comando | Descripción |
+|--------|---------|-------------|
+| **Desarrollo** | `npm run dev` | Inicia el servidor de desarrollo con HMR en `http://localhost:3000` |
+| **Build** | `npm run build` | Crea build de producción optimizado en carpeta `build/` |
+| **Preview** | `npm run preview` | Previsualiza el build de producción en `http://localhost:4173` |
+| **Tests** | `npm test` | Ejecuta todos los tests en modo watch |
+| **Test Run** | `npm test -- --run` | Ejecuta tests una sola vez (ideal para CI/CD) |
+| **Coverage** | `npm run test:coverage` | Genera reporte de cobertura de tests |
+| **Lint** | `npm run lint` | Verifica el código con ESLint |
+
+## 🔍 Verificación de Seguridad
+
+### Auditoría de Dependencias
+
+```bash
+npm audit
+```
+
+**Resultado esperado:**
+```
+found 0 vulnerabilities
+```
+
+### Actualizar Dependencias
+
+Si en el futuro necesitas actualizar dependencias:
+
+```bash
+# Ver dependencias desactualizadas
+npm outdated
+
+# Actualizar a versiones compatibles
+npm update
+
+# Verificar nuevamente
+npm audit
+```
+
+## 🐛 Troubleshooting
+
+### El puerto 3000 está en uso
+
+```bash
+# En Windows PowerShell
+netstat -ano | findstr :3000
+taskkill /PID <PID> /F
+
+# O especifica otro puerto
+npm run dev -- --port 3001
+```
+
+### Errores de dependencias
+
+```bash
+# Limpia caché y reinstala
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Los tests fallan
+
+```bash
+# Verifica que todas las dependencias estén instaladas
+npm install
+
+# Ejecuta los tests con más información
+npm test -- --reporter=verbose
+```
+
+### Problemas con TypeScript
+
+```bash
+# Verifica la configuración de TypeScript
+npx tsc --noEmit
+```
 
 ## 🔒 Security
 
@@ -180,7 +335,28 @@ Las contribuciones son bienvenidas. Para cambios importantes:
 
 Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
-## 👤 Author
+## ✅ Checklist de Verificación
+
+Antes de hacer deploy, verifica:
+
+- [ ] `npm install` completa sin errores
+- [ ] `npm audit` muestra 0 vulnerabilidades
+- [ ] `npm test` todos los tests pasan (36/36)
+- [ ] `npm run build` genera el build correctamente
+- [ ] `npm run preview` muestra el sitio funcionando
+- [ ] Sin errores de TypeScript
+- [ ] Sin warnings de ESLint
+
+## 📊 Métricas del Proyecto
+
+- ✅ **Tests:** 36/36 pasando (100%)
+- ✅ **Vulnerabilidades:** 0
+- ✅ **Componentes:** 7 principales
+- ✅ **Cobertura de Tests:** Alta
+- ✅ **TypeScript:** Strict mode
+- ✅ **Performance:** Optimizado con Vite
+
+## 👤 Autor
 
 **Philipp Reyes**
 
@@ -189,4 +365,6 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ---
 
-Construido con ❤️ usando React, TypeScript y Vite
+⭐ **Si este proyecto te fue útil, considera darle una estrella en GitHub!**
+
+Construido con ❤️ usando React, TypeScript y Vite | © 2025 Philipp Reyes
